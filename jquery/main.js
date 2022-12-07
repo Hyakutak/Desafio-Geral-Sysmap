@@ -40,12 +40,9 @@ const userAlert = () => {
 }
 const verifica = () => {
     // Verifica se os inputs estao vazios
-    const name = $('#nome');
-    const email = $('#email');
-    const message = $('#msg');
-    if($(name).val() == "" && $(email).val() == "" && $(message).val() == ""){
-        $(name).css("border", "1px solid red");
-        $(email).css("border", "1px solid red");
-        $(message).css("border", "1px solid red");
-    }
+    $( ".text-froms" ).each(function() {
+        if($(this).val() == ""){
+            $(this).css("border", "1px solid red");
+        }
+    });
 }
