@@ -64,11 +64,15 @@ const somar = (total, number) => {
     return total + number
 }
 // calcula a media do array
-let media = arrayNumbers.reduce(somar, 0)/arrayNumbers.length;
+let media = arrayNumbers.reduce(
+    (total, number) => total + number, 0
+) / arrayNumbers.length;
 // Remove o quinto item do array
 const removeFiveNumber = arrayNumbers.splice(4, 1);
 // Soma o array de numeros
-let soma = arrayNumbers.reduce(somar, 0);
+let soma = arrayNumbers.reduce(
+    (total, number) => total + number, 0
+);
 // array de numeros pares
 for(let i = 0; i < arrayNumbers.length; i++) {
     if((arrayNumbers[i] % 2) == 0) {
