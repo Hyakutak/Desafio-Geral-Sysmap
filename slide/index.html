@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .slideshow {
+            position: relative;
+        }
+        .slideshow .active {
+            visibility: visible;
+            transform: translateX(0px);
+        }
+        .slide-item {
+            transform: translateX(1000px);
+            transition: transform 2s ease-in;
+            position: absolute;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="slideshow">
+            <div class="slide-item active">
+                <img src="https://www.motonline.com.br/noticia/wp-content/uploads/2020/05/haojue-dr-300-1-700x420.png" alt="">
+            </div>
+            <div class="slide-item">
+                <img src="https://www.motonline.com.br/noticia/wp-content/uploads/2020/05/haojue-dr-300-1-700x420.png" alt="">
+            </div>
+        </div>
+        <div class="controls">
+            <div class="arrow prev"></div>
+            <div class="arrow next"></div>
+        </div>
+    </div>
+    <script>
+        
+        window.onload = function() { 
+            const slideItem = Array.from(document.querySelectorAll('.slide-item'));           
+            const slideShow = () => {
+                slideItem.forEach(element => {
+                    if(element.classList.contains('active')) {
+                        element.classList.remove('active');
+                    } else {
+                        element.classList.add('active');
+                    }
+                });
+            }
+            setInterval(slideShow, 3000);
+        }
+        
+    </script>
+</body>
+</html>
